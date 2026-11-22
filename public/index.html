@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 관리 시스템</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.1/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>학생 관리 시스템</h2>
+        <div class="controls">
+            <label>반:</label>
+            <input type="text" id="class">
+            <label>번호:</label>
+            <input type="text" id="number">
+            <label>이름:</label>
+            <input type="text" id="name">
+            <div class="empty"></div>
+            <label>설정시각:</label>
+            <label><input type="checkbox" class="time-input" value="1교시"> 1교시</label>
+            <label><input type="checkbox" class="time-input" value="2교시"> 2교시</label>
+            <label><input type="checkbox" class="time-input" value="3교시"> 3교시</label>
+            <label><input type="checkbox" class="time-input" value="4교시"> 4교시</label>
+            <label><input type="checkbox" class="time-input" value="5교시"> 5교시</label>
+            <label><input type="checkbox" class="time-input" value="6교시"> 6교시</label>
+            <label><input type="checkbox" class="time-input" value="7교시"> 7교시</label>
+            <label>위치:</label>
+            <input type="text" id="location">
+            <button id="add-student">학생 추가</button>
+            <button id="sort-class">반으로 정렬</button>
+            <button id="sort-location">위치로 정렬</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>반</th>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>설정시각</th>
+                    <th>위치</th>
+                    <th>작업</th>
+                </tr>
+            </thead>
+            <tbody id="students-body"></tbody>
+        </table>
+    </div>
+    <button class="csv" id="export-csv-button">엑셀로 저장하기</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
